@@ -1,11 +1,16 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
+
 import { EnvVariables } from '../env-variables/env-variables';
 
 export class TypeormConfigService {
   public static getConfig(
-    configService: ConfigService<EnvVariables>,
+    configService: ConfigService<EnvVariables, true>,
   ): TypeOrmModuleOptions {
+    const x = configService.get('foo');
+
+    console.log(x.foo);
+
     return {
       type: 'postgres',
       host: configService.get('dbHost'),

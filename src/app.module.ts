@@ -8,6 +8,7 @@ import { NotesModule } from './notes/notes.module';
 import { EnvVariablesValidation } from './config/env-variables/env-variables-validation';
 import { TypeormConfigService } from './config/typeorm-config/typeorm-config.service';
 import { EnvVariables } from './config/env-variables/env-variables';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { EnvVariables } from './config/env-variables/env-variables';
       useFactory: (configService: ConfigService<EnvVariables>) =>
         TypeormConfigService.getConfig(configService),
     }),
+    UsersModule,
   ],
   providers: [AppService],
 })

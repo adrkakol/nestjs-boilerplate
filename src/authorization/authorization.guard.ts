@@ -1,5 +1,6 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+
 import { EnvVariables } from '../config/env-variables/env-variables';
 
 @Injectable()

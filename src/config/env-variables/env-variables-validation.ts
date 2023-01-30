@@ -1,4 +1,5 @@
 import { validateSync } from 'class-validator';
+
 import { EnvVariables } from './env-variables';
 
 export class EnvVariablesValidation {

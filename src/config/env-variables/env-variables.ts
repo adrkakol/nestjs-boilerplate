@@ -9,6 +9,7 @@ export class EnvVariables {
     this.dbUser = envs.DB_USER;
     this.dbPassword = envs.DB_PASSWORD;
     this.dbName = envs.DB_NAME;
+    this.foo = { foo: 'ad' };
   }
 
   @IsString()
@@ -36,4 +37,9 @@ export class EnvVariables {
   @IsString()
   @IsNotEmpty()
   dbName: string;
+
+  @IsString()
+  public foo: {
+    foo: string;
+  };
 }

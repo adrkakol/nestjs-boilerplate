@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+
 import { NotesService } from '../services/notes.service';
 import { AuthGuard } from '../../authorization/authorization.guard';
 import { CreateNoteDto } from '../dto/create-note.dto';
@@ -14,7 +15,7 @@ export class NotesController {
   }
 
   @Get('/:noteId') // in express: router.get('/:noteId')
-  public getNoteById(@Param('noteId') noteId: string) {
-    return this.notesService.getNoteById(noteId);
+  public getNoteById(@Param('noteId') id: string) {
+    return this.notesService.getNoteById(id);
   }
 }
